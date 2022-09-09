@@ -32,3 +32,16 @@ Then("I see authentication page", () => {
     I.seeElement(Auth.copyrightLabel);
     I.see('Генеральная лицензия Банка России на совершение банковских операций №436 от 31.12.2014');
 })
+
+Then('I\'m trying to reset password', () => {
+    I.seeElement(Auth.resetPassBtn);
+    I.click(Auth.resetPassBtn);
+    I.waitForVisible(Auth.resetPassDialog);
+    I.see('Забыли логин или пароль?');
+    I.see('Если вы забыли логин или пароль Интернет-банка, для восстановления обратитесь в контактный центр по телефону в Санкт-Петербурге 8 /812/ 329 5050, в Москве 8 /495/ 228 3838 или в любой офис банка. Воспользуйтесь поиском, чтобы найти ближайший офис.');
+    I.see('Если Вы забыли логин и/или пароль для входа в корпоративный Интернет-банк i2B, обратитесь в Службу технической поддержки по телефону 8 /812/ 329 5939 в Санкт-Петербурге, 8 /800/ 500 5939 по России (звонок бесплатный) или в обслуживающее подразделение банка (необходимо предъявить документ, удостоверяющий личность).');
+    I.seeElement(Auth.resetPassOfficeLink);
+    I.seeElement(Auth.closeResetPassDialog);
+    I.click(Auth.closeResetPassDialog);
+    I.waitForDetached(Auth.resetPassDialog);
+});
