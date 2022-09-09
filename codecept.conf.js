@@ -8,7 +8,6 @@ exports.config = {
     }
   },
   include: {
-    I: './steps_file.js',
     Auth: './webpages/authentication.js'
   },
   mocha: {},

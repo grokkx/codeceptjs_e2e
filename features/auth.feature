@@ -2,4 +2,5 @@ Feature: Authentication
 
 
 Scenario: Login
-    Given Я открываю браузер и авторизирусь как пользователь
+    Given I open webpage https://idemo.bspb.ru/
+    Then I see authentication page
