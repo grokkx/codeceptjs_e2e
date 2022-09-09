@@ -4,7 +4,8 @@ exports.config = {
     Playwright: {
       url: 'https://idemo.bspb.ru',
       show: true,
-      browser: 'chromium'
+      browser: 'chromium',
+      waitForNavigation: 'load'
     }
   },
   include: {
